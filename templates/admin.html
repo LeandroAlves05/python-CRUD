@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/css/admin.css" />
+  </head>
+  <body>
+    <div class="back">
+      {% set message = get_flashed_messages() %} {% if message %}
+      <p class="flash flash_admin">{{message[0]}}</p>
+      {% endif %}
+      <h1 class="adminTitle">Admin</h1>
+      <div class="tables">
+        <div id="form_back">
+          <h1>Register - User</h1>
+          <div id="form_front">
+            <form id="adm" action="/registerUser" method="post">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                placeholder="Enter name"
+                required
+                type="text"
+              />
+              <br />
+              <label for="password" id="password">Password</label>
+              <input
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                required
+                type="text"
+              />
+              <br />
+              <button id="btn_register" type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+        <div id="form_back">
+          <h1>Signed Users</h1>
+          <div id="form_front" class="users_list">
+            {% if users %} {% for c in users %}
+            <form action="/deleteUser" method="post">
+              <ul>
+                <input type="hidden" name="delete_user" value="{{c}}" />
+                <li><span>Name:</span> {{c["name"]}}</li>
+                <p>
+                  <span>Password:</span>
+                  {{c["password"]}}
+                </p>
+              </ul>
+              <button class="delete_btn" type="submit">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </form>
+            <hr />
+            {% endfor %} {% else %}
+            <h2>*No users registered</h2>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

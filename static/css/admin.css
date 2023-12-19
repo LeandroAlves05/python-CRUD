@@ -1,0 +1,77 @@
+@import url(../css/home.css);
+
+.adminTitle {
+  width: 150px;
+  text-align: center;
+  margin: 40px auto;
+  background-color: #7a7afd;
+  border-radius: 30px;
+  box-shadow: 0px 0px 1px #000;
+}
+
+ul {
+  margin-left: 50px;
+  text-align: left;
+  font-size: 20px;
+}
+
+li::marker {
+  overflow-y: scroll;
+  color: #7a7afd
+}
+
+li, p {
+  margin: 20px; 
+  font-weight: normal;
+}
+
+span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+hr {
+  border-color: rgba(122, 122, 253, 0.264);
+}
+
+.delete_btn {
+  margin-bottom: 5px;
+  font-size: 20px;
+  padding: 5px;
+  padding-bottom: 2px;
+  border: none;
+  transition: 0.2s;
+  background: none;  
+  border-radius: 50%;
+  text-shadow: none;
+}
+
+.delete_btn:hover {
+  background-color: rgba(122, 122, 253, 0.552);
+
+  color: #fff;
+  cursor: pointer;
+}
+
+.flash_admin {
+  background-color: #36BA8A;
+}
+
+.users_list {
+  max-height: 200px;
+}
+
+#form_back {
+  margin: 3% auto;
+}
+
+@media screen and (min-width: 1500px) {
+  .tables {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #form_back {
+    min-width: 700px;
+  }
+}

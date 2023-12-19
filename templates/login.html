@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/css/home.css" />
+  </head>
+  <body>
+    <div class="back">
+      {% set message = get_flashed_messages() %} {% if message %}
+      <p class="flash flash_alert">{{message[0]}}</p>
+      {% endif %}
+      <div id="form_back">
+        <h1>Login</h1>
+        <div id="form_front">
+          <form id="login" action="/login" method="post">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              placeholder="Enter your name..."
+              required
+              type="text"
+            />
+            <br />
+            <label for="password" id="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              placeholder="Enter your password..."
+              required
+              type="password"
+            />
+            <br />
+            <button id="btn_login" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
