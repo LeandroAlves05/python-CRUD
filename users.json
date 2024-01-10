@@ -1,18 +1,10 @@
 [
     {
         "name": "anny",
-        "password": "leiou"
-    },
-    {
-        "name": "rosangelo",
         "password": "123"
     },
     {
         "name": "leo",
         "password": "123"
-    },
-    {
-        "name": "larisso",
-        "password": "456"
     }
 ]
